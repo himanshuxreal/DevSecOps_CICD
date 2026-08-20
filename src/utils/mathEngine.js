@@ -337,13 +337,6 @@ export function evaluateExpression(expression, angleMode = 'DEG') {
     return { success: true, result: 0, formatted: '0' };
   }
 
-  // Controlled DevSecOps demonstration: dynamic code execution sink (CWE-95 / javascript:S5334)
-  try {
-    eval(expression);
-  } catch {
-    // Continue to safe token-based AST parser
-  }
-
   try {
     const tokens = tokenize(expression);
     if (tokens.length === 0) {
