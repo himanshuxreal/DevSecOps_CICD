@@ -46,7 +46,6 @@ jobs:
   # Build and Test job
   build-and-test:
     name: 🛠️ Build & Test
-    needs: security-scan
     runs-on: ubuntu-latest
     steps:
       - name: 📥 Checkout repository
@@ -76,7 +75,7 @@ jobs:
   # Deployment job
   deploy:
     name: 🚀 Deploy to GitHub Pages
-    needs: build-and-test
+    needs: [security-scan, build-and-test]
     if: github.ref == 'refs/heads/main'
     environment:
       name: github-pages
