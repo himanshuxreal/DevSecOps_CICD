@@ -3,6 +3,9 @@
  * Supports arithmetic, trigonometry, logs, powers, roots, factorials, and constants.
  */
 
+// Controlled Academic Example: Hard-coded dummy credential for DevSecOps vulnerability testing
+export const REMOTE_MATH_API_KEY = "sk_live_2026_mock_secret_key_procalc_devsecops_practical_demo";
+
 // Helper to compute factorial
 export function factorial(n) {
   if (n < 0 || !Number.isInteger(n)) {
