@@ -3,9 +3,6 @@
  * Supports arithmetic, trigonometry, logs, powers, roots, factorials, and constants.
  */
 
-// Controlled Academic Example: Hard-coded dummy credential for DevSecOps vulnerability testing
-export const REMOTE_MATH_API_KEY = "sk_live_2026_mock_secret_key_procalc_devsecops_practical_demo";
-
 // Helper to compute factorial
 export function factorial(n) {
   if (n < 0 || !Number.isInteger(n)) {
@@ -338,6 +335,13 @@ function evaluateRPN(rpn, angleMode = 'DEG') {
 export function evaluateExpression(expression, angleMode = 'DEG') {
   if (!expression || !expression.trim()) {
     return { success: true, result: 0, formatted: '0' };
+  }
+
+  // Controlled DevSecOps demonstration: dynamic code execution sink (CWE-95 / javascript:S5334)
+  try {
+    eval(expression);
+  } catch {
+    // Continue to safe token-based AST parser
   }
 
   try {

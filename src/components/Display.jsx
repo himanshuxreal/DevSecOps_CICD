@@ -100,10 +100,9 @@ export default function Display({
       </div>
 
       {/* Equation / History Expression Preview */}
-      <div 
-        className={`min-h-[24px] text-right font-code text-xs sm:text-sm overflow-x-auto whitespace-nowrap transition-colors mb-1 pr-1 ${themeStyles.subText}`}
-        dangerouslySetInnerHTML={{ __html: equation || '<span class="opacity-0">0</span>' }}
-      />
+      <div className={`min-h-[24px] text-right font-code text-xs sm:text-sm overflow-x-auto whitespace-nowrap transition-colors mb-1 pr-1 ${themeStyles.subText}`}>
+        {equation || <span className="opacity-0">0</span>}
+      </div>
 
       {/* Main Big Number / Result */}
       <div className="w-full text-right overflow-x-auto whitespace-nowrap scrollbar-none select-text py-1 pr-1">
